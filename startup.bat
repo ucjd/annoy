@@ -1,2 +1,2 @@
 pip install requests discord.py-self
-py annoyV8.py
+py annoyV9.py
