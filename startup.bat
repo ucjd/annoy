@@ -1,2 +1,2 @@
-pip install requests discord.py-self
-py annoyV9.py
+pip install aiohttp asyncio discord.py-self
+py annoyV10.py
