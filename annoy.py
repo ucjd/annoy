@@ -1,9 +1,4 @@
-import discord
-import json
-import aiohttp
-import os
-import sys
-import asyncio
+import aiohttp, asyncio, discord, json, os, sys
 from discord.ext import commands
 from aiohttp import ClientSession
 
